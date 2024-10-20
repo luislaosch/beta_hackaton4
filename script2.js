@@ -96,10 +96,8 @@ document.getElementById("r2_e4_btn1").addEventListener("click",(paramRest)=>{
 //Ejercicio 05
 const sinCadenas = (arreglo=[])=>{
     let sinCadenas=[];
-    // console.log(arreglo);
     arreglo.forEach(element => {
         if(!isNaN(element)){
-            // console.log(isNaN(element));
             sinCadenas.push(element);
         }
     });
@@ -116,9 +114,32 @@ document.getElementById("r2_e5_btn1").addEventListener("click",(filtarCadenas)=>
             arreglo.push(cadenaRandom());
         }
     }
-    let arr = sinCadenas(arreglo);
-    console.log(arr);
     document.getElementById("r2_e5_span1").innerText=`${arreglo}`;
     document.getElementById("r2_e5_resultado").innerText=`${sinCadenas(arreglo)}`;
 })
 
+// ejercicio 06
+
+const minMaxSimple = (arreglo) => {
+    // console.log("minmaxSample ",arreglo);
+    let max = Math.min(...arreglo);
+    let min = Math.max(...arreglo);
+    // console.log(min,max);
+    return [max, min];
+};
+
+document.getElementById("r2_e6_btn1").addEventListener("click",(minMax)=>{
+    minMax.preventDefault();
+    //generar arreglo
+    let arreglo =[]
+
+    for (let index = 0; index < 12; index++) {
+        arreglo.push(enteroRandom());
+    }
+    document.getElementById("r2_e6_span1").innerText=`${arreglo}`;
+    const arr =minMaxSimple(arreglo);
+    // console.log(arr);
+    document.getElementById("r2_e6_resultado").innerText = 
+        `Mínimo: ${arr[0]}, Máximo: ${arr[1]}`;
+
+})
