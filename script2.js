@@ -243,3 +243,56 @@ document.getElementById("r2_e11_btn1").addEventListener("click", (ejercicio11) =
     // document.getElementById("r2_10_span1").innerText = `${objObejto.a} ${objObejto.b}`;
     document.getElementById("r2_e11_resultado").innerText = `${sumarPresupuestos(getBudgets)}`;
 })
+
+// ejercicio 12
+
+const devolverNombres =(individuos ={})=>{
+    let nombres=[];
+    individuos.forEach(individuo => { nombres.push(individuo.name);});
+    return nombres;
+}
+document.getElementById("r2_e12_btn1").addEventListener("click", (ejercicio12) => {
+    ejercicio12.preventDefault();
+
+    const getStudentNames= ([
+        { name: "Steve" },
+        { name: "Mike" },
+        { name: "John" }]);
+    // document.getElementById("r2_10_span1").innerText = `${objObejto.a} ${objObejto.b}`;
+    document.getElementById("r2_e12_resultado").innerText = `${devolverNombres(getStudentNames)}`;
+})
+
+// ejercicio 13
+
+const objectToArrayKeyValue =(reacciones ={})=>{
+    let reaccionesCV=[];
+    // console.log(reacciones);
+    // reacciones.forEach(reaccion => { 
+    //     // nombres.push(individuo.name);
+    //     const arr = [reaccion.key,reaccion.value];
+    //     reaccionesCV.push(arr);
+    // });
+    // reacciones=Object.entries(reacciones).
+    // reacciones.forEach(reaccion => { 
+    //         const arr = [reaccion.key,reaccion.value];
+    //         reaccionesCV.push(arr);
+    // })
+    
+    Object.entries(reacciones).forEach(([clave, valor]) => {
+        const arr = [clave,valor];
+        reaccionesCV.push(arr);
+    });
+
+    return reaccionesCV;
+}
+document.getElementById("r2_e13_btn1").addEventListener("click", (ejercicio13) => {
+    ejercicio13.preventDefault();
+    const getReacciones={
+        likes: 2,
+        dislikes: 3,
+        followers: 10};
+    // document.getElementById("r2_10_span1").innerText = `${objObejto.a} ${objObejto.b}`;
+    console.log(objectToArrayKeyValue(getReacciones));
+    document.getElementById("r2_e13_resultado").innerText = `${objectToArrayKeyValue(getReacciones)}`;
+})
+
