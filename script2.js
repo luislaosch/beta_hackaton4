@@ -339,11 +339,52 @@ const countdown =(tamano)=>{
     }
     return arreglo;
 }
-document.getElementById("r2_e16_btn1").addEventListener("click",(ejercicio15)=>{
-    ejercicio15.preventDefault();
+document.getElementById("r2_e16_btn1").addEventListener("click",(ejercicio16)=>{
+    ejercicio16.preventDefault();
     // let arreglo = [2, 3, 1, 0];
     const tamano = parseInt(document.getElementById("r2_e16_input1").value);
     document.getElementById("r2_e16_resultado").innerText = `${countdown(tamano)}`;
     document.getElementById("r2_e16_input1").value = ``;
 })
 // ejercicio 17
+
+document.getElementById("r2_e17_btn1").addEventListener("click",(ejercicio17)=>{
+    ejercicio17.preventDefault();
+    const arreglo = [10, 4, 1, 4, -10, -50, 32, 21];
+    document.getElementById("r2_e17_resultado").innerText = `Diferencia: ${minMaxSimple(arreglo)[0] - minMaxSimple(arreglo)[1]}`;
+    
+})
+
+//ejericio 18
+
+const filterList =(arreglo =[]) =>{
+    let arr =arreglo.filter(num =>  !isNaN(num));
+    return arr;
+}
+document.getElementById("r2_e18_btn1").addEventListener("click",(ejercicio18)=>{
+    ejercicio18.preventDefault();
+    const arreglo = [1, 2, 3, "x", "y", 10];
+    document.getElementById("r2_e18_resultado").innerText = ` ${filterList(arreglo)}`;
+    
+})
+
+//ejercicio 19
+const repeat = (elemento,veces) =>{
+    let  arr =[];
+    for (let i = 0; i < veces; i++) {
+        arr.push(elemento);
+    }
+    console.log(arr);
+    return arr;
+    
+}
+document.getElementById("r2_e19_btn1").addEventListener("click",(ejercicio19)=>{
+    ejercicio19.preventDefault();
+    const elemento = document.getElementById("r2_e19_input1").value;
+
+    const veces = parseInt(document.getElementById("r2_e19_input2").value);
+    document.getElementById("r2_e19_input1").value="";
+    document.getElementById("r2_e19_input2").value="";
+    document.getElementById("r2_e19_resultado").innerText = ` ${repeat(elemento,veces)}`;
+    
+})
