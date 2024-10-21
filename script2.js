@@ -295,4 +295,55 @@ document.getElementById("r2_e13_btn1").addEventListener("click", (ejercicio13) =
     console.log(objectToArrayKeyValue(getReacciones));
     document.getElementById("r2_e13_resultado").innerText = `${objectToArrayKeyValue(getReacciones)}`;
 })
+// ejercicio 14
+const squaresSum =(numero)=>{
+    let sqrs=0;
+    for (let i = 1; i <= numero; i++) {
+        sqrs += i**2;
+    }
+    return sqrs;
+}
+document.getElementById("r2_e14_btn1").addEventListener("click",(ejercicio14)=>{
+    ejercicio14.preventDefault();
+    const n = parseInt(document.getElementById("r2_e14_input1").value);
+    if (!(n === "")){
+        
+        document.getElementById("r2_e14_resultado").innerText = `${squaresSum(n)}`;
+        document.getElementById("r2_e14_input1").value = ``;
+    }else{
+        alert("Ejercicio 14, valor vacio o inválido ");
+    }
+})
 
+// ejercicio 15
+const productoTamaño =(arreglo =[])=>{
+    for (let i = 0; i < arreglo.length; i++) {
+        arreglo[i]= arreglo[i]*(arreglo.length);
+    }
+    return arreglo;
+}
+document.getElementById("r2_e15_btn1").addEventListener("click",(ejercicio15)=>{
+    ejercicio15.preventDefault();
+    let arreglo = [2, 3, 1, 0];
+    // const n = parseInt(document.getElementById("r2_e14_input1").value);
+    document.getElementById("r2_e15_resultado").innerText = `${productoTamaño(arreglo)}`;
+    // document.getElementById("r2_e15_input1").value = ``;
+})
+
+// ejercicio 16
+
+const countdown =(tamano)=>{
+    let arreglo =[];
+    for (let i = 0; i < tamano; i++) {
+        arreglo[i]= tamano - i;
+    }
+    return arreglo;
+}
+document.getElementById("r2_e16_btn1").addEventListener("click",(ejercicio15)=>{
+    ejercicio15.preventDefault();
+    // let arreglo = [2, 3, 1, 0];
+    const tamano = parseInt(document.getElementById("r2_e16_input1").value);
+    document.getElementById("r2_e16_resultado").innerText = `${countdown(tamano)}`;
+    document.getElementById("r2_e16_input1").value = ``;
+})
+// ejercicio 17
