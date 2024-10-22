@@ -388,3 +388,43 @@ document.getElementById("r2_e19_btn1").addEventListener("click",(ejercicio19)=>{
     document.getElementById("r2_e19_resultado").innerText = ` ${repeat(elemento,veces)}`;
     
 })
+// ejercicio 20
+const vreplace  = (palabra,vocal) =>{
+    const nuevapalabra = palabra.replaceAll(/[aeiou]/g, vocal);
+    return nuevapalabra;
+}
+document.getElementById("r2_e20_btn1").addEventListener("click",(ejercicio20)=>{
+    ejercicio20.preventDefault();
+    const palabra = document.getElementById("r2_e20_input1").value;
+    const vocal = document.getElementById("r2_e20_input2").value;
+
+    document.getElementById("r2_e20_input1").value="";
+    document.getElementById("r2_e20_input2").value="";
+    document.getElementById("r2_e20_resultado").innerText = ` ${vreplace (palabra,vocal)}`;
+    
+})
+// ejercicio 21
+const findNemo = (texto,palabra) =>{
+    const  indice = texto.indexOf(palabra);
+    return `¡Encontré a Nemo en ${indice}!`;
+}
+document.getElementById("r2_e21_btn1").addEventListener("click",(ejercicio21)=>{
+    ejercicio21.preventDefault();
+    const palabra='Nemo';
+    const frase = document.getElementById("r2_e21_input1").value;
+    document.getElementById("r2_e21_input1").value="";
+    document.getElementById("r2_e21_resultado").innerText = ` ${findNemo(frase,palabra)}`;
+    
+})
+// ejercicio 22
+const capLast = (palabra) =>{
+    // const nuevapalabra = palabra.replac(/[aeiou]/g, "O");
+    const nuevapalabra = palabra.replace("o", "O");
+    return nuevapalabra;
+}
+document.getElementById("r2_e22_btn1").addEventListener("click",(ejercicio19)=>{
+    ejercicio19.preventDefault();
+    const palabra = "Hello";
+    document.getElementById("r2_e22_resultado").innerText = ` ${capLast(palabra)}`;
+    
+})
